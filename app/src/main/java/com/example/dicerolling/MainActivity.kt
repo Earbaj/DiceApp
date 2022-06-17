@@ -6,18 +6,21 @@ import android.widget.Button
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
-
+// variable declaration
     lateinit var img_dice : ImageView
     lateinit var btn_roll : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //initialize with specific id
         img_dice = findViewById(R.id.img_dice)
         btn_roll = findViewById(R.id.btn_roll)
+        //call onclick to make change
         btn_roll.setOnClickListener { DiceRoll() }
     }
 
+    // Function for generate random number and change dice according to number
     private fun DiceRoll(){
         var random_num = (1..6).random()
         var drawable = when(random_num){
